@@ -6,8 +6,16 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const loginRouter  = require("./routes/login")
 
 var app = express();
+// const hbs = require("handlebars");
+// const helpers = require('handlebars-helpers');
+
+// const halpers = require("handlebars-helpers")(['array', 'comparison', 'date', 'html', 'math', 'misc', 'number', 'object', 'regex', 'string', 'url']);
+
+
+// hbs.registerHelper("include",helpers.)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/login', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
