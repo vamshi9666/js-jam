@@ -11,11 +11,12 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
-  role  Role    @default(USER)
-  posts Post[]
+  email    String  @unique
+  password String
+  id       Int     @id @default(autoincrement())
+  name     String?
+  role     Role    @default(USER)
+  posts    Post[]
 }
 
 model Post {
@@ -26,6 +27,7 @@ model Post {
   published Boolean  @default(false)
   author    User     @relation(fields: [authorId], references: [id])
   authorId  Int
+
   // categories Category[]
 }
 

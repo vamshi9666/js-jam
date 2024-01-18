@@ -8,11 +8,10 @@ router.get("/", function (req, res, next) {
     { name: "Create Post", link: "/create-post" },
   ];
 
-  const  errorMessage = req.query.error
+  const errorMessage = req.query.error;
 
-
-    console.log("errorMessage", errorMessage);
-  res.render("login", {
+  console.log("errorMessage", errorMessage);
+  res.render("signup", {
     title: "Express",
     error: errorMessage,
     global: {
